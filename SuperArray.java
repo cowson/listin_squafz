@@ -1,6 +1,6 @@
-// Team Big Daddy Foti - Richard Lin, Jason Mohabir
+// Team listin_squafz - Richard Lin, Niels Graham 
 // APCS pd10
-// HW40 -- Array of Grade 316
+// HW42 -- Array of Titanium
 // 2015-12-02
 
 /*****************************
