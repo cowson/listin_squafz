@@ -10,7 +10,7 @@
  *  access value at index
  *  overwrite value at index
  *  report number of meaningful items
- * Adds functionality to std Java array:
+ *  Adds functionality to std Java array:
  *  resizability
  *  ability to print meaningfully
  *  add item (at end)
@@ -23,14 +23,14 @@ public class SuperArray implements ListInt {
     //~~~~~INSTANCE VARS~~~~~
     //underlying container, or "core" of this data structure:
     private int[] _data;
-
+    
     //position of last meaningful value
     private int _lastPos;
 
     //size of this instance of SuperArray
     private int _size;
-
-		
+    
+    
     //~~~~~METHODS~~~~~
     //default constructor: initializes 10-item array
     public SuperArray() 
@@ -39,8 +39,8 @@ public class SuperArray implements ListInt {
 	_lastPos = -1; //flag to indicate no lastpos yet
 	_size = 0;	
     }
-
-		
+    
+    
     //output array in [a,b,c] format, eg
     // {1,2,3}.toString() -> "[1,2,3]"
     public String toString() 
@@ -55,8 +55,8 @@ public class SuperArray implements ListInt {
 	foo += "]";
 	return foo;
     }
-
-		
+    
+    
     //double capacity of this SuperArray
     private void expand() 
     { 
@@ -65,12 +65,12 @@ public class SuperArray implements ListInt {
 	    temp[i] = _data[i];
 	_data = temp;
     }
-
-		
+    
+    
     //accessor -- return value at specified index
     public int get( int index ) { return _data[index]; }
-
-		
+    
+    
     //mutator -- set value at index to newVal, 
     //           return old value at index
     public int set( int index, int newVal ) 
@@ -79,8 +79,8 @@ public class SuperArray implements ListInt {
 	_data[index] = newVal;
 	return temp;
     }
-
-
+    
+    
     // ~~~~~~~~~~~~~~ PHASE II ~~~~~~~~~~~~~~
     //adds an item after the last item
     public void add( int newVal ) {
@@ -88,28 +88,26 @@ public class SuperArray implements ListInt {
     	_size++;
     	_data[_lastPos]= newVal;
     }
-
-
+    
+    
     //inserts an item at index
     //shifts existing elements to the right
     public void add( int index, int newVal ) {
     	_lastPos++;
     	_size++;
     	for (int i = index; i < _lastPos; i++){
-         int temp = _data[i];
-         _data[i] = newVal;
-    	   newVal = temp;
+	    int temp = _data[i];
+	    _data[i] = newVal;
+	    newVal = temp;
     	}
     }
    
     //removes the item at index
     //shifts elements left to fill in newly-empted slot
     public void remove( int index ) { 
-    	
     	for (int i = index; i < _size; i++) {
     		_data[i] = _data[i+1];
     	}
-    	
     	_lastPos--;
     	_size--;
     }
@@ -120,10 +118,9 @@ public class SuperArray implements ListInt {
     	return _size;
     }
 
-
+    
     //main method for testing
-    public static void main( String[] args ) 
-    {
+    public static void main( String[] args ){
 	SuperArray curtis = new SuperArray();
 	System.out.println("Printing empty SuperArray curtis...");
 	System.out.println(curtis);
@@ -158,14 +155,14 @@ public class SuperArray implements ListInt {
 
 	  System.out.println("Printing populated SuperArray mayfield...");
 	  System.out.println(mayfield);
-
+	  
 	  mayfield.remove(3);
 	  System.out.println("Printing SuperArray mayfield post-remove...");
 	  System.out.println(mayfield);
 	  mayfield.remove(3);
 	  System.out.println("Printing SuperArray mayfield post-remove...");
 	  System.out.println(mayfield);
-
+	  
 	  mayfield.add(3,99);
 	  System.out.println("Printing SuperArray mayfield post-insert...");
 	  System.out.println(mayfield);
@@ -175,7 +172,39 @@ public class SuperArray implements ListInt {
 	  mayfield.add(1,77);
 	  System.out.println("Printing SuperArray mayfield post-insert...");
 	  System.out.println(mayfield);
-	  
+	
+	  System.out.println("ListInt stuffz");
+	  ListInt tacos = new SuperArray();
+	  System.out.println("Printing empty SuperArray mayfield tacos...");
+	  System.out.println(tacos);
+
+	  tacos.add(5);
+	  tacos.add(4);
+	  tacos.add(3);
+	  tacos.add(2);
+	  tacos.add(1);
+
+	  System.out.println("Printing populated SuperArray tacos...");
+	  System.out.println(tacos);
+
+	  mayfield.remove(0);
+	  System.out.println("Printing SuperArray tacos post-remove...");
+	  System.out.println(tacos);
+	  mayfield.remove(2);
+	  System.out.println("Printing SuperArray tacos post-remove...");
+	  System.out.println(tacos);
+
+	  mayfield.add(3,99);
+	  System.out.println("Printing SuperArray tacos post-insert...");
+	  System.out.println(tacos);
+	  mayfield.add(2,88);
+	  System.out.println("Printing SuperArray tacos post-insert...");
+	  System.out.println(tacos);
+	  mayfield.add(1,77);
+	  System.out.println("Printing SuperArray tacos post-insert...");
+	  System.out.println(tacos);
+
+	      
 	//*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
 
     }//end main
