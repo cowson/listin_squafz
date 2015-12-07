@@ -187,20 +187,20 @@ public class SuperArray implements ListInt {
 	  System.out.println("Printing populated SuperArray tacos...");
 	  System.out.println(tacos);
 
-	  mayfield.remove(0);
+	  tacos.remove(0);
 	  System.out.println("Printing SuperArray tacos post-remove...");
 	  System.out.println(tacos);
-	  mayfield.remove(2);
+	  tacos.remove(2);
 	  System.out.println("Printing SuperArray tacos post-remove...");
 	  System.out.println(tacos);
 
-	  mayfield.add(3,99);
+	  tacos.add(3,99);
 	  System.out.println("Printing SuperArray tacos post-insert...");
 	  System.out.println(tacos);
-	  mayfield.add(2,88);
+	  tacos.add(2,88);
 	  System.out.println("Printing SuperArray tacos post-insert...");
 	  System.out.println(tacos);
-	  mayfield.add(1,77);
+	  tacos.add(1,77);
 	  System.out.println("Printing SuperArray tacos post-insert...");
 	  System.out.println(tacos);
 
